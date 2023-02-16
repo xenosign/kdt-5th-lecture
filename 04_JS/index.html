@@ -6,10 +6,59 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="./class/ex-extends.js"></script>
+  <style>
+    .orange {
+      background-color: orange;
+    }
+  </style>
 </head>
 
 <body>
+  <input />
+  <input type="text" />
+  <input type="checkbox" />
+  <div class="box1">box</div>
+  <div class="box2">box2</div>
+  <div class="box3" id="third">box3</div>
+  <ul>
+    <li onclick="sendData(this)">1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <!-- <script src="./DOM/classList.js"></script> -->
 </body>
+
+<script>
+  const boxEl = document.querySelector(".box1");
+  boxEl.classList.add("test");
+  console.log(boxEl);
+
+  const addInput = document.createElement("input");
+  // <input />
+  addInput.setAttribute("type", "text");
+  // <input type="text" />
+  boxEl.append(addInput);
+
+  function sendData(t) {
+    console.log(t);
+  }
+
+  const ulTag = document.querySelector("ul");
+  ulTag.addEventListener("click", function(e) {
+    console.log(e);
+  })
+
+  const boxArr = document.querySelectorAll('div');
+  console.log(boxArr);
+
+  for (let i = 0; i < boxArr.length; i++) {
+    boxArr[i].classList.add("test2");
+  }
+
+  const nameArr = document.getElementsByTagName("DIV");
+  console.log(nameArr);
+</script>
 
 </html>
